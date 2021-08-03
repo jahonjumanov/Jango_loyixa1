@@ -1,8 +1,8 @@
 from django.db import models
 
 # Create your models here.
-class meva:
-    title:str
-    img:str
-    desc:str
-    price:float
+class Meva(models.Model):
+    title = models.CharField(max_length=255)
+    img_url = models.CharField(max_length=2048)
+    desc = models.CharField(max_length=255)
+    price = models.FloatField()
