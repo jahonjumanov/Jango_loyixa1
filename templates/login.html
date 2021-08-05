@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 align="center">Tizimga kirish</h1>
+
+<form class="container" method="POST" action="">
+  <f1>{{user.is_authenticated}}</f1>
+  {% for xabar in messages %}
+  <h4 class="bg-danger btn container color-light" align="center">{{xabar}}</h4>
+{% endfor %}
+    {% csrf_token %}
+  <div class="mb-3">
+    <h4 >Username</h4>
+    <input name="username" type="text" class="form-control">
+  </div>
+  <div class="mb-3">
+    <h4>Password</h4>
+    <input name="password" type="password" class="form-control" >
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
